@@ -48,7 +48,7 @@
     "ztree": "^3.5.24"
   },
   "devDependencies": {
-    "@angular-devkit/core": "^0.5.10",
+    "@angular-devkit/core": "^0.5.12",
     "@angular/cli": "1.6.1",
     "@angular/compiler-cli": "^5.0.0",
     "@angular/language-service": "^5.0.0",

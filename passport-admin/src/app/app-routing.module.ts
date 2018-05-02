@@ -1,33 +1,31 @@
-﻿import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import { NgModule }             from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
 
-// import { HomeComponent } from './home/index';
-// import { ProductListComponent, ProductAddEditComponent } from './products/index';
-// import { SigninComponent } from './signin/index';
+import {SelectivePreloadingStrategy} from "./selective-preloading-strategy";
 
-const routes: Routes = [
-    // { path: '', pathMatch: 'full', component: HomeComponent },
-    // {
-    //     path: 'products',
-    //     component: ProductListComponent,
-    //     children: [
-    //         { path: 'add', component: ProductAddEditComponent },
-    //         { path: 'edit/:id', component: ProductAddEditComponent }
-    //     ]
-    // },{
-    //     path: 'signin',
-    //     component: SigninComponent
-    // },
+import { PageNotFoundComponent } from './error-page/page-not-found.component';
 
-    // otherwise redirect to home
-    { path: '**', redirectTo: '' }
+
+
+/**
+ * app路由
+ */
+const appRoutes: Routes = [
+  { path: '', redirectTo: '/login', pathMatch: 'full' },
+  {
+     path:'**',
+      component: PageNotFoundComponent
+  }
 ];
 
-
 @NgModule({
-    imports: [RouterModule.forRoot(routes)],
-    exports: [RouterModule]
+  imports: [
+   RouterModule.forRoot(appRoutes,{preloadingStrategy: SelectivePreloadingStrategy,useHash:true})
+  ],
+  exports: [
+    RouterModule
+  ]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
 
-// export const routedComponents = [HomeComponent, ProductListComponent, ProductAddEditComponent, SigninComponent];
+
