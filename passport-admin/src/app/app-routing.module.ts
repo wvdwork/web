@@ -13,6 +13,10 @@ import { PageNotFoundComponent } from './error-page/page-not-found.component';
 const appRoutes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },
   {
+    path: 'login',
+    loadChildren: 'app/login/login.module#LoginModule'
+  },
+  {
      path:'**',
       component: PageNotFoundComponent
   }

@@ -5,7 +5,8 @@
 @Component({
     moduleId: module.id.toString(),
     selector: 'app',
-    templateUrl: 'app.component.html'
+    template: '<router-outlet></router-outlet>' +
+    '<c-toast-box toastAnimation="fancy"></c-toast-box><c-spin></c-spin>'
 })
 
 export class AppComponent {
