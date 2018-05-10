@@ -23,6 +23,7 @@ import {ToastComponent} from './shared/toast/toast.component';
 //spin
 import { SpinComponent} from './shared/spin/spin.component';
 import { SpinService } from './shared/spin/spin.service';
+import {AppService} from "./app.service";
 
 @NgModule({
     imports: [
@@ -42,6 +43,7 @@ import { SpinService } from './shared/spin/spin.service';
         SpinComponent
     ],
     providers: [
+      AppService,
       SelectivePreloadingStrategy,
       ToastService,
       SpinService

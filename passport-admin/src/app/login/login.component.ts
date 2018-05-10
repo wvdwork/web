@@ -77,6 +77,4 @@ export class LoginComponent implements OnInit {
     this.toastService.toast(toastCfg);
     this.router.navigate(['/app/home']);
   }
-
-
 }

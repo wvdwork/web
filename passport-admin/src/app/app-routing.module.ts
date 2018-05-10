@@ -17,6 +17,10 @@ const appRoutes: Routes = [
     loadChildren: 'app/login/login.module#LoginModule'
   },
   {
+    path: 'app',
+    loadChildren: 'app/main/main.module#MainModule'
+  },
+  {
      path:'**',
       component: PageNotFoundComponent
   }
