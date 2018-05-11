@@ -4,7 +4,7 @@ import { FormsModule }        from '@angular/forms';
 import { Routes, RouterModule} from "@angular/router";
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 // import  { UserSharedModule }       from '../business-shared/user/user-shared.module';
-// import  { CustomScrollbarModule}       from '../shared/custom-scrollbar/custom-scrollbar.module';
+import  { CustomScrollbarModule}       from '../shared/custom-scrollbar/custom-scrollbar.module';
 import  { ModalModule}            from '../shared/modal/modal.module';
 //
 import { MainComponent }   from './main.component';
@@ -14,7 +14,7 @@ import { MainComponent }   from './main.component';
 
 
 import { MainRoutingModule } from './main-routing.module';
-
+import { LeftSidebarMenuComponent } from '../common/leftside/sidebar-menu.component'
 
 /**
  * 主体模块
@@ -26,11 +26,12 @@ import { MainRoutingModule } from './main-routing.module';
      NgbModule,
      MainRoutingModule,
      // UserSharedModule,
-     // CustomScrollbarModule,
+     CustomScrollbarModule,
      ModalModule
   ],
   declarations: [
      MainComponent,
+     LeftSidebarMenuComponent
      // SidebarMenuComponent,
      // TreeviewMenuComponent
   ],

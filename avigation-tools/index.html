@@ -1,0 +1,253 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport"  content="width=device-width, initial-scale=1.0, user-scalable=0, maximum-scale=1.0" />
+<title>通用工具</title>
+
+<style type="text/css">
+	* {
+		padding:0;
+		margin: 0;
+	}
+	body{
+		font-size:14px;
+		color: #333;
+		background: #000;
+	}
+
+	body::after {
+		content: "";
+		background: url('img/timg.jpg') no-repeat center center;
+		background-size: cover;
+		opacity: 0.8;
+		top: 0;
+		left: 0;
+		bottom: 0;
+		right: 0;
+		position: fixed;
+		z-index: -1;
+	}
+
+	a {
+		text-decoration: none;
+	}
+
+	header {
+		padding: 10px;
+		margin-bottom: 20px;
+		color: #fff;
+		text-align: center;
+		background: rgba(0,0,0,.3);
+		border-bottom: 1px solid rgba(255,255,255,.4);
+	}
+
+	.container {
+		max-width: 900px;
+		margin: 0 auto;
+		padding-bottom: 50px;
+	}
+
+	.entry {
+	 	display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+	}
+
+	.entry-item {
+		width: 200px;
+		margin: 10px;
+		border: 1px solid #eee;
+		border-radius: 10px;
+		background: rgba(0,0,0,.3);
+		transition: all .45s;
+	}
+
+	.entry-item:hover {
+		border-color: #fe921f;
+		box-shadow: 0px 0px 0px 2px #fe921f;
+	}
+
+	.entry-item .hd {
+		position: relative;
+		padding: 10px 0;
+		text-align: center;
+		font-size: 18px;
+		color: #fff;
+		border-bottom: 1px solid #eee;
+	}
+
+	.entry-item .hd a {
+		position: absolute;
+		right:-10px;
+		top: -10px;
+		padding: 5px;
+		font-size: 12px;
+		color: #fff;
+		font-style: italic;
+		background: #fe921f;
+	}
+
+	.entry-item .bd {
+		padding: 15px;
+	}
+
+	.entry-item .bd a {
+		display: block;
+		width: 100%;
+		padding-top: 100%;
+		background-repeat: no-repeat;
+		background-size: cover;
+		background-position: center center;
+	}
+
+	.entry-item .ft {
+		display: flex;
+		justify-content:center;
+		padding: 15px;
+		padding-top:0;
+		text-align: center;
+	}
+
+	.entry-item img {
+		width: 100%;
+	}
+
+	.entry-item .button {
+		padding: 6px 12px;
+		margin: 0 8px;
+		font-size: 14px;
+		color: #fff;
+		background: none;
+		border: 1px solid #007bff;
+		cursor: pointer;
+		transition: all .2s;
+	}
+
+	.entry-item .button:hover {
+		background: #007bff;
+		border: 1px solid #007bff;
+	}
+
+	.tab-hd {
+		margin-top: 10px;
+	}
+
+	.tab-hd button {
+		width: 80px;
+		height: 40px;
+		line-height:40px;
+		margin: 0 5px;
+		background: none;
+		border: 1px solid #fff;
+		font-size: 14px;
+		color: #fff;
+		cursor: pointer;
+		outline: none;
+	}
+
+	.tab-hd button.active {
+		border-color: #fe921f;
+	}
+
+	.tab-bd-item {
+		display: none;
+	}
+
+	.tab-bd-item.active {
+		display: block;
+	}
+</style>
+
+</head>
+<body>
+
+<header>
+	<div class="tab-hd">
+		<button class="active">通用工具</button>
+		<button>DBA工具</button>
+	</div>
+</header>
+
+<main>
+	<div class="container">
+		<div class="tab">
+			<div class="tab-bd">
+				<div class="tab-bd-item active">
+					<div class="entry">
+						<div class="entry-item">
+							<div class="hd"><strong>Scheduler调度平台</strong><a href="http://km.tutorabc.com/pages/viewpage.action?pageId=18356586" target="_blank">KM文档</a></div>
+							<div class="bd">
+								<a href="" target="_blank" style="background-image: url('img/scheduler.jpg')"></a>
+							</div>
+							<div class="ft">
+								<a class="button" href="http://scheduler.passport.weitutordev.com" target="_blank">Stage</a>
+								<a class="button" href="http://scheduler.vipjr.com" target="_blank">Product</a>
+							</div>
+						</div>
+						<div class="entry-item">
+							<div class="hd"><strong>disconf配置中心</strong><a href="http://km.tutorabc.com/pages/viewpage.action?pageId=16507217" target="_blank">KM文档</a></div>
+							<div class="bd">
+								<a href="" target="_blank" style="background-image: url('img/disconf.jpg');"></a>
+							</div>
+							<div class="ft">
+								<a class="button" href="http://disconf.vipjr.com/login.html" target="_blank">Open</a>
+							</div>
+						</div>
+						<div class="entry-item">
+							<div class="hd"><strong>Vipcoder</strong><a href="http://km.tutorabc.com/pages/viewpage.action?pageId=16499436" target="_blank">KM文档</a></div>
+							<div class="bd">
+								<a href="" target="_blank" style="background-image: url('img/vipcoder.jpg');"></a>
+							</div>
+							<div class="ft">
+								<a class="button" href="http://vipcoder.vipjr.com/" target="_blank">Open</a>
+							</div>
+						</div>
+						<div class="entry-item">
+							<div class="hd"><strong>CacheCloud</strong><a href="http://km.tutorabc.com/pages/viewpage.action?pageId=28728569" target="_blank">KM文档</a></div>
+							<div class="bd">
+								<a href="" target="_blank" style="background-image: url('img/cachecloud.jpg')"></a>
+							</div>
+							<div class="ft">
+								<a class="button" href="http://cachecloud.weitutorstage.com" target="_blank">Stage</a>
+								<a class="button" href="http://cachecloud.weitutor.com" target="_blank">Product</a>
+							</div>
+						</div>
+						<div class="entry-item">
+							<div class="hd"><strong>Grafana</strong></div>
+							<div class="bd">
+								<a href="" target="_blank" style="background-image: url('img/grafana.jpg')"></a>
+							</div>
+							<div class="ft">
+								<a class="button" href="http://mm.tutorabc.com.cn/login" target="_blank">Open</a>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="tab-bd-item">
+					<div class="entry">
+
+					</div>
+				</div>
+
+				<div class="tab-bd-item">
+					<div class="entry">
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script src="js/jquery-1.7.1.min.js"></script>
+	<script>
+		$('.tab-hd button').on('click', function () {
+			$(this).addClass('active').siblings('button').removeClass('active');
+			$('.tab-bd-item').eq($(this).index()).addClass('active').siblings('.tab-bd-item').removeClass('active');
+        })
+	</script>
+</main>
+
+</body>
+</html>

@@ -4,9 +4,9 @@
 export class MainData {
   //用户数据
   userData:UserData;
-
+  //
   appData: AppData;
-  //菜单数据
+  // //菜单数据
   menuData: Array<MenuData>;
 
 }

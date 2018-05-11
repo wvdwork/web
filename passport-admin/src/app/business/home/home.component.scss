@@ -1,7 +1,7 @@
 @import '../../../assets/scss/base/app-base.scss';
 
 .c-home-login-tip{
-    color: $c-color-black-secondary;
+    color: $frame-color-primary
 }
 
 .c-home-card{
@@ -9,10 +9,10 @@
    .c-home-card-inner{
       max-height: 270px;
       .c-home-card-tip{
-          color: $c-color-black-secondary
+          color: $frame-color-primary
       }
       .c-date{
-          color:$c-color-black-secondary;
+          color:$frame-color-primary;
       }
    }
 }
@@ -20,14 +20,14 @@
 
 
 .c-home-common-func-outline{
-   border:0px  dashed $c-color-gray-deep;
+   border:0px  dashed $frame-color-primary;
   .c-home-common-func{
        padding:6px;
        &:hover {
-           background: $c-color-gray-deep;
+           background: $frame-color-primary;
            cursor: pointer;
        }
-               
+
    }
 }
 

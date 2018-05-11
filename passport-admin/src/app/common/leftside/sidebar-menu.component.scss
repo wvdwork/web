@@ -1,0 +1,14 @@
+@import '../../../assets/scss/base/app-base.scss';
+.sidebar-border {
+  display: flex;
+  padding: 0 -10px;
+  border-right:1px solid #9acfea;
+  height: 100%;
+  align-content: flex-start;
+  padding-bottom: 99999px;
+  //background-color: $frame-color-primary;
+}
+
+.sidebar-border span {
+  margin-left: 5px;
+}

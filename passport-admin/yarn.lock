@@ -17,9 +17,9 @@
   dependencies:
     source-map "^0.5.6"
 
-"@angular-devkit/core@^0.5.10":
-  version "0.5.11"
-  resolved "http://registry.npm.taobao.org/@angular-devkit/core/download/@angular-devkit/core-0.5.11.tgz#2e55a61bec1645527da9f40dc1081840d0b6c50e"
+"@angular-devkit/core@^0.5.12":
+  version "0.5.13"
+  resolved "http://registry.npm.taobao.org/@angular-devkit/core/download/@angular-devkit/core-0.5.13.tgz#c48c83c1bf38917e6af3f399d221d29466be9677"
   dependencies:
     ajv "~6.4.0"
     chokidar "^2.0.3"

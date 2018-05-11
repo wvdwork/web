@@ -32,12 +32,12 @@ export class MainComponent implements OnInit {
   mainData: MainData = {
     userData: {
       userName: "百变小咖",
-      userAvatar: "assets/img/logo.png",
+      userAvatar: "assets/img/user-header.png",
       mobilePhone: "1895090***2",
       email: "332557712@qq.com",
-      positions: "Java工程师、打杂工程师",
+      positions: "Java工程师、打杂工程师"
     },
-    appData: {
+    appData:{
       appName: "管理控制台"
     },
     menuData: []
