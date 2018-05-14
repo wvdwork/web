@@ -8,13 +8,13 @@ import  { CustomScrollbarModule}       from '../shared/custom-scrollbar/custom-s
 import  { ModalModule}            from '../shared/modal/modal.module';
 //
 import { MainComponent }   from './main.component';
-// import { SidebarMenuComponent }   from './sidebar-menu.component';
 // import { TreeviewMenuComponent }   from './treeview-menu.component';
 
 
 
 import { MainRoutingModule } from './main-routing.module';
 import { LeftSidebarMenuComponent } from '../common/leftside/sidebar-menu.component'
+import { SiderbarTreeviewMenuComponent } from '../common/leftside/treeview-menu.component'
 
 /**
  * 主体模块
@@ -31,7 +31,8 @@ import { LeftSidebarMenuComponent } from '../common/leftside/sidebar-menu.compon
   ],
   declarations: [
      MainComponent,
-     LeftSidebarMenuComponent
+     LeftSidebarMenuComponent,
+    SiderbarTreeviewMenuComponent
      // SidebarMenuComponent,
      // TreeviewMenuComponent
   ],

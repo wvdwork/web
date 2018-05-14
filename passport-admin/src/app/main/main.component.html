@@ -30,10 +30,10 @@
 
 </nav>
 <div class="content-main col-lg-12">
-  <div class="col-lg-2">
-    <left-sidebar-menu></left-sidebar-menu>
+  <div  class="sidebar">
+    <left-sidebar-menu [data]="mainData.menuData"></left-sidebar-menu>
   </div>
-  <div class="col-lg-10">
+  <div class="right-content">
     <router-outlet></router-outlet>
   </div>
 </div>

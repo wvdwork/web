@@ -1,19 +1,21 @@
 import { Component, OnInit, Input } from '@angular/core';
 import {  Router } from '@angular/router';
 import  { MenuData }    from '../../main/main-model';
-
+/**
+ * 菜单树组件
+ */
 @Component({
-  selector: 'left-sidebar-menu',
-  templateUrl: './sidebar-menu.component.html',
-  styleUrls:['sidebar-menu.component.scss']
+  selector: 'sidebar-treeview-menu',
+  templateUrl: `./treeview-menu.component.html`,
+  styleUrls:['./treeview-menu.component.scss']
 })
-export class LeftSidebarMenuComponent {
-  @Input() data:Array<MenuData>;
-  @Input() menuData:MenuData;
+export class SiderbarTreeviewMenuComponent {
+
+  @Input() data:MenuData;
+
 
   constructor(private router: Router) {}
 
-  onInit():void {}
 
   /**
    * 是否有子节点
@@ -31,19 +33,12 @@ export class LeftSidebarMenuComponent {
     if (!this.isLeaf(item)) {
       item.isExpend = !item.isExpend;
     } else {
-      this.router.navigate([item.url]);
+       this.router.navigate([item.url]);
     }
   }
 
-  isCollapse=true;
-  collapseClass="collapse";
 
-  clickLeaf() {
-    this.isCollapse = !this.isCollapse;
-    if (this.isCollapse == true) {
-      this.collapseClass = "collapse";
-    } else {
-      this.collapseClass = "";
-    }
-  }
+
+
+
 }

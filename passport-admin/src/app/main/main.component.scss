@@ -5,7 +5,7 @@
   justify-content: space-between;
   align-items: center;
   padding: 0 10px;
-  background-color: $frame-color-primary;
+  //background-color: $frame-color-primary;
 }
 
 //.tool-content-wrapper {
@@ -91,5 +91,16 @@
   padding: 0 10px;
   overflow: hidden;
   margin-bottom: -99999px;
+}
+
+.content-main .sidebar{
+  min-width: 8%;
+  max-width: 12%;
+}
+
+.content-main .right-content{
+  min-width: 88%;
+  max-width: 92%;
+  margin-left: 10px;
 }
 
