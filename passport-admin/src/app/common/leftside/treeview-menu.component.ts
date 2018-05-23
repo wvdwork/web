@@ -33,6 +33,7 @@ export class SiderbarTreeviewMenuComponent {
     if (!this.isLeaf(item)) {
       item.isExpend = !item.isExpend;
     } else {
+      alert('haha');
        this.router.navigate([item.url]);
     }
   }

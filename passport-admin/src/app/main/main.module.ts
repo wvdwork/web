@@ -9,6 +9,7 @@ import  { ModalModule}            from '../shared/modal/modal.module';
 //
 import { MainComponent }   from './main.component';
 // import { TreeviewMenuComponent }   from './treeview-menu.component';
+import { HttpService } from '../shared/http/http.service';
 
 
 
@@ -37,7 +38,7 @@ import { SiderbarTreeviewMenuComponent } from '../common/leftside/treeview-menu.
      // TreeviewMenuComponent
   ],
   exports:      [],
-  providers:    []
+  providers:    [HttpService]
 })
 export class MainModule {
 }

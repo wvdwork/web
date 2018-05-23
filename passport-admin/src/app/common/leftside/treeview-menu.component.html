@@ -4,7 +4,6 @@
       <i class="fa " [ngClass]="item.icon"></i> <span>{{item.name}}</span>
       <span class="pull-right glyphicon " [ngClass]="!isLeaf(item) ? 'glyphicon-chevron-down':''"></span>
     </a>
-
     <sidebar-treeview-menu [data]="item"></sidebar-treeview-menu>
   </li>
 </ul>

@@ -2,7 +2,7 @@
   <ul class="nav nav-tabs nav-stacked">
     <li  *ngFor="let item of data">
 
-      <a href="#/app/home" class="nav-header" style="align-items: flex-start" (click)="itemClicked(item);">
+      <a href="#" class="nav-header" style="align-items: flex-start" (click)="itemClicked(item);">
         <i class="fa " [ngClass]="item.icon"></i> <span>{{item.name}}</span>
         <span class="pull-right glyphicon " [ngClass]="!isLeaf(item) ? 'glyphicon-chevron-down':''"></span>
       </a>
