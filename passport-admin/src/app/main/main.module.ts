@@ -12,7 +12,6 @@ import { MainComponent }   from './main.component';
 import { HttpService } from '../shared/http/http.service';
 
 
-
 import { MainRoutingModule } from './main-routing.module';
 import { LeftSidebarMenuComponent } from '../common/leftside/sidebar-menu.component'
 import { SiderbarTreeviewMenuComponent } from '../common/leftside/treeview-menu.component'
@@ -28,7 +27,7 @@ import { SiderbarTreeviewMenuComponent } from '../common/leftside/treeview-menu.
      MainRoutingModule,
      // UserSharedModule,
      CustomScrollbarModule,
-     ModalModule
+     ModalModule,
   ],
   declarations: [
      MainComponent,

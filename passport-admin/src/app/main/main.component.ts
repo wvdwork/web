@@ -59,21 +59,10 @@ export class MainComponent implements OnInit {
    */
   ngOnInit() {
     this.mainData.userData = {userName: "aaaaa", userAvatar: "./assets/img/user-header.png", mobilePhone: "cccc", email: "ddd", positions: "eee"};
-    this.mainData.appData = {appName: "ttttttt", appLogoUrl: ""};
+    this.mainData.appData = {appName: "权限认证管理系统", appLogoUrl: ""};
 
     this.httpService.get(environment.domain + "fmMenu/list", {},
       (successful, data, res) => {
-        console.log(data);
-        if (data.success == true) {
-
-        }
-      }, function (successful, data, error) {
-        console.log(data);
-      })
-
-    this.httpService.get(environment.domain + "fmMenu/list", {},
-      (successful, data, res) => {
-        console.log(data);
         if (data.success == true) {
           let menuArray = data.data;
           for (let i = 0; i < menuArray.length; i++) {

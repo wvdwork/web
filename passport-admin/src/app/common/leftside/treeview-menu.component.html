@@ -1,6 +1,6 @@
 <ul class="nav nav-tabs nav-stacked" [hidden]="!data.isExpend" *ngIf="!isLeaf(data)">
   <li *ngFor="let item of data.children">
-    <a  (click)="itemClicked(item);">
+    <a href="" (click)="itemClicked(item);">
       <i class="fa " [ngClass]="item.icon"></i> <span>{{item.name}}</span>
       <span class="pull-right glyphicon " [ngClass]="!isLeaf(item) ? 'glyphicon-chevron-down':''"></span>
     </a>

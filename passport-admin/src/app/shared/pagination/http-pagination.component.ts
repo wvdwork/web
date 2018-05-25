@@ -39,11 +39,15 @@ export class HttpPaginationComponent implements OnInit {
     @Output()
     onDataChanged = new EventEmitter();
 
+    @Input()
+    size: number = this.pageList[0];
+
 
 
     total: number = 0;
-    pageSize: number = this.pageList[0];
-    pageNumber: number = 1;
+    pages: number = 1;
+    current: number = 1;
+
 
 
 
@@ -72,16 +76,16 @@ export class HttpPaginationComponent implements OnInit {
         let that = this;
         let serviceData: any = {};
         if (Utils.isArray(this.param)) {
-            serviceData.pageNumber = this.pageNumber;
-            serviceData.pageSize = this.pageSize;
+            serviceData.size = this.size;
+            serviceData.current = this.current;
             serviceData.list = this.param;
         } else if (Utils.isObject(this.param)) {
-            this.param.pageNumber = this.pageNumber;
-            this.param.pageSize = this.pageSize;
+            this.param.size = this.size;
+            this.param.current = this.current;
             serviceData = this.param;
         } else {
-            serviceData.pageNumber = this.pageNumber;
-            serviceData.pageSize = this.pageSize;
+            serviceData.current = this.current;
+            serviceData.size = this.size;
         }
 
         if (this.method == HttpPaginationMethod.GET && Utils.isNotEmpty(this.url)) {
@@ -119,9 +123,10 @@ export class HttpPaginationComponent implements OnInit {
      * @param data 数据
      */
     private serverDataProcess(data: any) {
-        if (data && data.total && data.rows) {
+        data = data.data;
+        if (data && data.total && data.current) {
             this.total = data.total;
-            this.onDataChanged.emit(data.rows);
+            this.onDataChanged.emit(data.records);
         } else {
             console.error("c-http-pagination,返回的数据格式不正确！");
         }
@@ -130,15 +135,15 @@ export class HttpPaginationComponent implements OnInit {
 
     /**
      * 分页改变事件
-     * @param event 
+     * @param event
      */
      onPageChanged($event) {
         if ($event.type != PaginationType.PAGE_INIT) {
-            this.pageSize = $event.pageSize;
-            this.pageNumber = $event.pageNumber;
+            this.pages = $event.pages;
+            this.current = $event.current;
             this.getServerData();
         }
     }
-    
+
 
 }

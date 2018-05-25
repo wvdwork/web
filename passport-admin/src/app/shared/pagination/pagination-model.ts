@@ -18,9 +18,9 @@ export class PaginationType {
 export class PaginationOptions {
     total?:any;
     pageList?:Array<number>;
-    pageSize?:any;
-    pageTotal?:any;
-    pageNumber?:number;
+    size?:any;
+    pages?:any;
+    current?:number;
 
 }
 
@@ -30,5 +30,5 @@ export class PaginationOptions {
  */
 export class HttpPaginationMethod {
     public static POST: string = "post"
-    public static GET: string = "get"; 
+    public static GET: string = "get";
 }

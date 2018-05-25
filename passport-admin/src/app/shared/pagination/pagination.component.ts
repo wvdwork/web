@@ -27,17 +27,20 @@ export class PaginationComponent implements OnChanges {
 
     options: PaginationOptions = {};
 
+  @Input()
+  size: number;
 
-    constructor() { }
+
+  constructor() { }
 
     /**
     * 改变
-    * @param changes 
+    * @param changes
     */
     ngOnChanges(changes: SimpleChanges) {
         this.options.total = this.total;
         this.options.pageList = this.pageList;
-        this.options.pageSize = this.options.pageList[0];
+        this.options.size = this.options.pageList[0];
         this.refreshPage();
         this.pageOperation(PaginationType.PAGE_INIT);
     }
@@ -48,18 +51,18 @@ export class PaginationComponent implements OnChanges {
      * 刷新分页
      */
      refreshPage() {
-        this.options.pageTotal = 0;
-        if (Number.parseInt(this.options.total) % Number.parseInt(this.options.pageSize) == 0) {
-            this.options.pageTotal = Number.parseInt(this.options.total) / Number.parseInt(this.options.pageSize);
+        this.options.pages = 0;
+        if (Number.parseInt(this.options.total) % Number.parseInt(this.options.size) == 0) {
+            this.options.pages = Number.parseInt(this.options.total) / Number.parseInt(this.options.size);
         } else {
-            this.options.pageTotal = Number.parseInt(this.options.total) / Number.parseInt(this.options.pageSize) + 1;
+            this.options.pages = Number.parseInt(this.options.total) / Number.parseInt(this.options.size) + 1;
         }
-        this.options.pageTotal = Number.parseInt(this.options.pageTotal);
+        this.options.pages = Number.parseInt(this.options.pages);
 
-        if (this.options.pageTotal <= 0) {
-            this.options.pageNumber = 0;
+        if (this.options.pages <= 0) {
+            this.options.current = 0;
         } else {
-            this.options.pageNumber = 1;
+            this.options.current = 1;
         }
     }
 
@@ -68,9 +71,9 @@ export class PaginationComponent implements OnChanges {
      * 下一页
      */
     nextPage() {
-        this.options.pageNumber++;
-        if (this.options.pageNumber > this.options.pageTotal) {
-            this.options.pageNumber = this.options.pageTotal;
+        this.options.current++;
+        if (this.options.current > this.options.pages) {
+            this.options.current = this.options.pages;
         }
     }
 
@@ -78,9 +81,9 @@ export class PaginationComponent implements OnChanges {
      * 上一页
      */
     previousPage() {
-        this.options.pageNumber--;
-        if (this.options.pageNumber <= 0) {
-            this.options.pageNumber = 1
+        this.options.current--;
+        if (this.options.current <= 0) {
+            this.options.current = 1
         }
     }
 
@@ -88,14 +91,14 @@ export class PaginationComponent implements OnChanges {
      * 最后一页
      */
     lastPage() {
-        this.options.pageNumber = this.options.pageTotal;
+        this.options.current = this.options.pages;
     }
 
     /**
      * 第一页
      */
     fristPage() {
-        this.options.pageNumber = 1;
+        this.options.current = 1;
     }
 
     /**
@@ -104,9 +107,9 @@ export class PaginationComponent implements OnChanges {
      */
     pageOperation(type) {
         let pageParam = {
-            pageNumber: this.options.pageNumber,
-            pageSize: this.options.pageSize,
-            pageTotal: this.options.pageTotal,
+            current: this.options.current,
+            size: this.options.size,
+            pageList: this.options.pageList,
             total: this.options.total,
             type: type
         }
@@ -115,7 +118,7 @@ export class PaginationComponent implements OnChanges {
 
     /**
      * 分页改变
-     * @param type 操作类型 
+     * @param type 操作类型
      */
     pageChanged(type) {
         switch (type) {
@@ -140,7 +143,7 @@ export class PaginationComponent implements OnChanges {
      * @param $event  当前条件
      */
      pageSizeChanged($event) {
-        this.options.pageSize = Number.parseInt($event);
+        this.options.size = Number.parseInt($event);
         this.refreshPage();
         this.pageOperation(PaginationType.PAGE_SIZE_CHANGE);
     }
