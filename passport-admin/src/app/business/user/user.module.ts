@@ -7,7 +7,10 @@ import { UserRoutingModule } from './user-routing.module';
 import { UserComponent } from './user.component';
 // import { UserAddComponent } from './user-add/user-add.component';
 import { UserListComponent } from './user-list/user-list.component';
-// import { UserInfoComponent} from './user-info/user-info.component';
+import {UserInfoComponent} from "./user-info/user-info.component";
+// import {UserInfoModule} from "./user-info/user-info.module";
+
+
 
 
 @NgModule({
@@ -15,14 +18,15 @@ import { UserListComponent } from './user-list/user-list.component';
     CommonModule,
     FormsModule,
     UserRoutingModule,
-    PaginationModule
+    PaginationModule,
+    // UserInfoModule
   ],
   declarations: [
     UserComponent,
     // UserAddComponent,
-    UserListComponent,
-    // UserInfoComponent
+    UserListComponent
   ],
+  entryComponents:[],
   exports: [
   ],
   providers: []

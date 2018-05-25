@@ -10,6 +10,7 @@ import { AppComponent } from './app.component';
 //modules
 import  { AppRoutingModule } from './app-routing.module';
 
+
 //strategy
 import {SelectivePreloadingStrategy} from "./selective-preloading-strategy";
 
@@ -24,6 +25,7 @@ import {ToastComponent} from './shared/toast/toast.component';
 import { SpinComponent} from './shared/spin/spin.component';
 import { SpinService } from './shared/spin/spin.service';
 import {AppService} from "./app.service";
+import {UserInfoComponent} from "./business/user/user-info/user-info.component";
 
 @NgModule({
     imports: [
@@ -40,17 +42,21 @@ import {AppService} from "./app.service";
         PageNotFoundComponent,
         ToastBoxComponent,
         ToastComponent,
-        SpinComponent
+        SpinComponent,
+        UserInfoComponent
     ],
     providers: [
       AppService,
       SelectivePreloadingStrategy,
       ToastService,
-      SpinService
+      SpinService,
+      UserInfoComponent
     ],
+  entryComponents:[UserInfoComponent],
     exports: [
       ToastBoxComponent,
-      SpinComponent
+      SpinComponent,
+      UserInfoComponent
     ],
     bootstrap: [AppComponent]
 })
