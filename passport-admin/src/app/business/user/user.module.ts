@@ -5,10 +5,11 @@ import  { PaginationModule}       from '../../shared/pagination/pagination.modul
 
 import { UserRoutingModule } from './user-routing.module';
 import { UserComponent } from './user.component';
-// import { UserAddComponent } from './user-add/user-add.component';
 import { UserListComponent } from './user-list/user-list.component';
+import { UserService } from '../../service/user/user.service';
 import {UserInfoComponent} from "./user-info/user-info.component";
-// import {UserInfoModule} from "./user-info/user-info.module";
+import {NgbModule} from "@ng-bootstrap/ng-bootstrap";
+// import {UserAddComponent} from "./user-add/user-add.component";
 
 
 
@@ -19,16 +20,19 @@ import {UserInfoComponent} from "./user-info/user-info.component";
     FormsModule,
     UserRoutingModule,
     PaginationModule,
-    // UserInfoModule
+    NgbModule
   ],
   declarations: [
     UserComponent,
+    UserInfoComponent,
     // UserAddComponent,
     UserListComponent
   ],
-  entryComponents:[],
-  exports: [
+  entryComponents:[UserInfoComponent],
+  providers: [
+    UserService
   ],
-  providers: []
+  exports: [
+  ]
 })
 export class UserModule { }

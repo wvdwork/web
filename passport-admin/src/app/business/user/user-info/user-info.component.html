@@ -1,5 +1,56 @@
 <div class="container-fluid">
-    <div>
-      aaaa
+  <div class="row text-center modal-pop-margin">
+    <div class="col-md-12">
+      <p class="c-line-title">用户信息</p>
     </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6">
+      <div class="form-group row">
+        <label class="col-md-2 col-form-label text-right">姓名：</label>
+        <div class="col-md-10">
+          <p class="form-control-plaintext">{{userDataInfo.userName}}</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="form-group row">
+        <label class="col-md-2 col-form-label text-right">帐号：</label>
+        <div class="col-md-10">
+          <p class="form-control-plaintext">{{userDataInfo.userAccount}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6">
+      <div class="form-group row">
+        <label class="col-md-2 col-form-label text-right">邮箱：</label>
+        <div class="col-md-10">
+          <p class="form-control-plaintext">{{userDataInfo.userMail}}</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="form-group row">
+        <label class="col-md-2 col-form-label text-right">电话：</label>
+        <div class="col-md-10">
+          <p class="form-control-plaintext">{{userDataInfo.userPhone}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6">
+      <div class="form-group row">
+        <label class="col-md-2 col-form-label text-right">昵称：</label>
+        <div class="col-md-10">
+          <p class="form-control-plaintext">{{userDataInfo.userNickName}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="text-center modal-pop-margin">
+    <button type="button" class="btn" (click)="close()">关闭</button>
+  </div>
 </div>

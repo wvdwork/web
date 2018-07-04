@@ -1,4 +1,4 @@
-﻿import { NgModule } from '@angular/core';
+﻿import { NgModule, enableProdMode  } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -25,7 +25,8 @@ import {ToastComponent} from './shared/toast/toast.component';
 import { SpinComponent} from './shared/spin/spin.component';
 import { SpinService } from './shared/spin/spin.service';
 import {AppService} from "./app.service";
-import {UserInfoComponent} from "./business/user/user-info/user-info.component";
+
+enableProdMode();
 
 @NgModule({
     imports: [
@@ -42,21 +43,18 @@ import {UserInfoComponent} from "./business/user/user-info/user-info.component";
         PageNotFoundComponent,
         ToastBoxComponent,
         ToastComponent,
-        SpinComponent,
-        UserInfoComponent
+        SpinComponent
     ],
     providers: [
       AppService,
       SelectivePreloadingStrategy,
       ToastService,
-      SpinService,
-      UserInfoComponent
+      SpinService
     ],
-  entryComponents:[UserInfoComponent],
+  entryComponents:[],
     exports: [
       ToastBoxComponent,
-      SpinComponent,
-      UserInfoComponent
+      SpinComponent
     ],
     bootstrap: [AppComponent]
 })

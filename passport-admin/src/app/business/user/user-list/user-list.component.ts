@@ -5,6 +5,7 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import {HttpPaginationComponent} from '../../../shared/pagination/http-pagination.component';
 import { environment } from './../../../../environments/environment';
 import {UserInfoComponent} from "../user-info/user-info.component";
+// import {UserAddComponent} from "../user-add/user-add.component";
 
 @Component({
   selector: 'c-user-list',
@@ -14,7 +15,7 @@ export class UserListComponent {
 
   @ViewChild('hp', undefined) hp: HttpPaginationComponent;
 
-  url:string=environment.domain + "/fmUser/list";
+  url:string = environment.domain + "/fmUser/list";
 
   param:any = {
     name: 'admin',
@@ -37,16 +38,11 @@ export class UserListComponent {
   }
 
   viewUserInfo (id) {
-    // this.ngbModalService.open(UserInfoComponent, {"size":"lg"}).result.then((result) => {
-    //
-    // }, reason => {
-    //
-    // });
+    const modalRef = this.ngbModalService.open(UserInfoComponent, { size: 'lg'});
+    modalRef.componentInstance.userId = id;
+  }
 
-    this.ngbModalService.open(UserInfoComponent, { size: 'lg'}).result.then((result) => {
-      console.log(result + "result")
-    }, (reason) => {
-      console.log(reason + "reason")
-    });
+  addUser() {
+    // const modalRef = this.ngbModalService.open(UserAddComponent, { size: 'lg'});
   }
 }
