@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule }       from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import  { PaginationModule}       from '../../shared/pagination/pagination.module';
 
 import { UserRoutingModule } from './user-routing.module';
@@ -9,7 +9,7 @@ import { UserListComponent } from './user-list/user-list.component';
 import { UserService } from '../../service/user/user.service';
 import {UserInfoComponent} from "./user-info/user-info.component";
 import {NgbModule} from "@ng-bootstrap/ng-bootstrap";
-// import {UserAddComponent} from "./user-add/user-add.component";
+import {UserModifyComponent} from "./user-modify/user-modify.component";
 
 
 
@@ -18,6 +18,7 @@ import {NgbModule} from "@ng-bootstrap/ng-bootstrap";
   imports: [
     CommonModule,
     FormsModule,
+    ReactiveFormsModule,
     UserRoutingModule,
     PaginationModule,
     NgbModule
@@ -25,10 +26,10 @@ import {NgbModule} from "@ng-bootstrap/ng-bootstrap";
   declarations: [
     UserComponent,
     UserInfoComponent,
-    // UserAddComponent,
+    UserModifyComponent,
     UserListComponent
   ],
-  entryComponents:[UserInfoComponent],
+  entryComponents:[UserInfoComponent, UserModifyComponent],
   providers: [
     UserService
   ],

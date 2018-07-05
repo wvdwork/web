@@ -3,7 +3,7 @@ import { RouterModule, Routes, Router } from '@angular/router';
 
 import { UserComponent } from './user.component';
 import { UserListComponent } from './user-list/user-list.component';
-import {UserInfoComponent} from "./user-info/user-info.component";
+
 /**
  * 主页路由
  */
