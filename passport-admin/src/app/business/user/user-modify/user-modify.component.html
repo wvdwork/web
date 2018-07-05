@@ -1,0 +1,75 @@
+<div class="container-fluid">
+  <div class="row text-center modal-pop-margin">
+    <div class="col-md-12">
+      <p class="c-line-title">用户信息</p>
+    </div>
+  </div>
+  <form [formGroup]="userModifyForm">
+    <div class="row">
+      <div class="col-md-6">
+        <div class="form-group row">
+          <label class="col-md-3 col-form-label text-right"><span class="text-danger">*</span> 姓名：</label>
+          <div class="col-md-9">
+            <input type="text" class="form-control" formControlName="userName" placeholder="请输入姓名...">
+            <div class="c-validator-invalid" *ngIf="(userModifyForm.controls['userName'].errors && userModifyForm.controls['userName'].dirty)">
+              姓名不能为空！
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="form-group row">
+          <label class="col-md-3 col-form-label text-right"><span class="text-danger">*</span> 帐号：</label>
+          <div class="col-md-9">
+            <input type="text" class="form-control" formControlName="userAccount" placeholder="请输入帐号...">
+            <div class="c-validator-invalid" *ngIf="(userModifyForm.controls['userAccount'].errors && userModifyForm.controls['userAccount'].dirty)">
+              帐号不能为空！
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-6">
+        <div class="form-group row">
+          <label class="col-md-3 col-form-label text-right"><span class="text-danger">*</span> 邮箱：</label>
+          <div class="col-md-9">
+            <input type="text" class="form-control" formControlName="userMail" placeholder="请输入邮箱...">
+            <div class="c-validator-invalid" *ngIf="(userModifyForm.controls['userMail'].errors && userModifyForm.controls['userMail'].dirty)">
+              邮箱不能为空！
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="form-group row">
+          <label class="col-md-3 col-form-label text-right"><span class="text-danger">*</span> 电话：</label>
+          <div class="col-md-9">
+            <input type="text" class="form-control" formControlName="userPhone" placeholder="请输入电话...">
+            <div class="c-validator-invalid" *ngIf="(userModifyForm.controls['userPhone'].errors && userModifyForm.controls['userPhone'].dirty)">
+              电话不能为空！
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        <div class="form-group row">
+          <label class="col-md-3 col-form-label text-right"><span class="text-danger"></span> 昵称：</label>
+          <div class="col-md-9">
+            <input type="text" class="form-control" formControlName="userNickName" placeholder="请输入昵称...">
+            <!--<div class="c-validator-invalid" *ngIf="!(userModifyForm.controls['userMail'].valid)">-->
+            <!--邮箱不能为空！-->
+            <!--</div>-->
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="text-center modal-pop-margin">
+      <button type="button" class="btn" [disabled]="!(userModifyForm.valid)" (click)="save();">提交</button>
+      <button type="button" class="btn" (click)="close()">取消</button>
+    </div>
+  </form>
+</div>
