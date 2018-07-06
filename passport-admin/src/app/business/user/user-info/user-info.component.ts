@@ -21,7 +21,7 @@ export class UserInfoComponent {
 
    userId: any;
 
-   userDataInfo: UserModel;
+   userDataInfo: UserModel = new UserModel();
 
   constructor(
     public activeModal: NgbActiveModal,
@@ -38,17 +38,6 @@ export class UserInfoComponent {
       const toastCfg = new ToastConfig(ToastType.ERROR, '', msg, 3000);
     });
   }
-
-    /**
-     * 上传
-     */
-    ok(): void {
-        // if(this.passwordEditForm.valid){
-        //      const toastCfg = new ToastConfig(ToastType.SUCCESS, '', '修改密码成功!', 2000);
-        //      // this.close();
-        // }
-    }
-
     /**
        * 关闭
        */

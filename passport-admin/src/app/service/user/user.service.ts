@@ -21,6 +21,13 @@ export class UserService {
   }
 
   /**
+   * 修改用户信息
+   */
+  updateUserInfo(id: number){
+    return environment.domain + "/fmUser/user/update/" + id;
+  }
+
+  /**
    * 删除用户信息
    */
   delUserInfo(id: number){

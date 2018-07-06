@@ -22,9 +22,11 @@ export class UserListComponent {
 
   url:string = environment.domain + "/fmUser/list";
 
-  param:any = {
-    name: 'admin',
-    age: 16
+  param: any = {
+  }
+
+  searchPara: any = {
+
   }
 
   dataList:Array<any>=[
@@ -48,6 +50,12 @@ export class UserListComponent {
     this.dataList = $event;
   }
 
+  search() {
+    console.log(this.searchPara.userName);
+
+
+  }
+
   viewUserInfo (id) {
     const modalRef = this.ngbModalService.open(UserInfoComponent, { size: 'lg'});
     modalRef.componentInstance.userId = id;
@@ -57,7 +65,18 @@ export class UserListComponent {
     const modalRef = this.ngbModalService.open(UserModifyComponent, { size: 'lg'}).result.then((result) => {
     }, (reason) => {
       this.hp.search();
-    });;
+    });
+  }
+
+  updateUser(id) {
+    const modalRef = this.ngbModalService.open(UserModifyComponent, { size: 'lg'});
+    modalRef.componentInstance.userId = id;
+    modalRef.componentInstance.operation = 'update';
+
+    modalRef.result.then((result) => {
+    }, (reason) => {
+      this.hp.search();
+    });
   }
 
   delUser(id) {

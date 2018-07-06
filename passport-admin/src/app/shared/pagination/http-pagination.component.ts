@@ -35,6 +35,9 @@ export class HttpPaginationComponent implements OnInit {
     @Input()
     param: any = new Object();
 
+  @Input()
+  condition: any = new Object();
+
 
     @Output()
     onDataChanged = new EventEmitter();
@@ -87,6 +90,8 @@ export class HttpPaginationComponent implements OnInit {
             serviceData.current = this.current;
             serviceData.size = this.size;
         }
+
+        this.condition = this.param;
 
         if (this.method == HttpPaginationMethod.GET && Utils.isNotEmpty(this.url)) {
             this.httpService.get(this.url, serviceData, function (successful, data, res) {

@@ -12,6 +12,7 @@ const mainRoutes: Routes = [
     children: [
       { path: 'home', loadChildren: 'app/business/home/home.module#HomeModule' },
       { path: 'user', loadChildren: 'app/business/user/user.module#UserModule' },
+      { path: 'application', loadChildren: 'app/business/application/application.module#ApplicationModule' },
       // { path: 'demo', loadChildren: 'app/business/demo/demo.module#DemoModule' },
       // { path: 'user', loadChildren: 'app/business/user/user.module#UserModule' },
       // { path: 'role', loadChildren: 'app/business/role/role.module#RoleModule' },

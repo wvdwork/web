@@ -7,23 +7,23 @@
     <div class="row">
         <div class="col-md-4">
             <div class="form-group row">
-                <label class="col-md-3 col-form-label text-right">帐号：</label>
+                <label class="col-md-3 col-form-label text-right">项目名称：</label>
                 <div class="col-md-9">
-                    <input type="text" class="form-control" ng-model="searchPara.userAccount">
+                    <input type="text" class="form-control" placeholder="">
                 </div>
             </div>
         </div>
         <div class="col-md-4">
             <div class="form-group row">
-                <label class="col-md-3 col-form-label text-right">姓名：</label>
+                <!--<label class="col-md-3 col-form-label text-right">姓名：</label>-->
                 <div class="col-md-9">
-                    <input type="text" class="form-control" ng-model="searchPara.userName">
+                    <!--<input type="text" class="form-control" placeholder="请输入姓名...">-->
                 </div>
             </div>
         </div>
         <div class="col-md-4">
             <div class="form-group">
-                <button class="btn btn-primary" (click)="search()"><i class="fa fa-search fa-fw"></i> 查询</button>
+                <button class="btn btn-primary"><i class="fa fa-search fa-fw"></i> 查询</button>
             </div>
         </div>
     </div>
@@ -39,22 +39,20 @@
                 <thead>
                     <tr>
                         <th class="text-center c-w-1">序号</th>
-                        <th class="text-center c-w-2">帐号</th>
-                        <th class="text-center c-w-2">姓名</th>
-                        <th class="text-center c-w-1">邮箱</th>
-                        <th class="text-center c-w-2">创建时间</th>
-                        <th class="text-center c-w-2">修改时间</th>
+                        <th class="text-center c-w-2">项目名称</th>
+                        <th class="text-center c-w-2">项目描述</th>
+                        <th class="text-center c-w-1">所属公司</th>
+                        <th class="text-center c-w-2">项目负责人</th>
                         <th class="text-center c-w-2">操作</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr *ngFor="let data of dataList;let i = index">
                         <td class="text-center">{{i+1}}</td>
-                        <td class="text-center">{{data.userAccount}}</td>
-                        <td class="text-center">{{data.userNickName}}</td>
-                        <td class="text-center">{{data.userMail}}</td>
-                        <td class="text-center">{{data.createTime}}</td>
-                        <td class="text-center">{{data.updateTime}}
+                        <td class="text-center">{{data.applicationName}}</td>
+                        <td class="text-center">{{data.applicationDesc}}</td>
+                        <td class="text-center">{{data.companyName}}</td>
+                        <td class="text-center">{{data.adminUserName}}</td>
                         <td class="text-center">
                             <div >
                               <button class="btn btn-info btn-sm" (click)="viewUserInfo(data.id)"><i class="fa fa-search fa-fw"></i> 查看</button>
