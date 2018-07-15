@@ -10,6 +10,7 @@ import {HttpService} from "../../../shared/http/http.service";
 import {UserService} from "../../../service/user/user.service";
 import {ToastService} from "../../../shared/toast/toast.service";
 import {ToastConfig, ToastType} from "../../../shared/toast/toast-model";
+import {FormGroup, FormControl, FormBuilder} from "@angular/forms";
 // import {UserAddComponent} from "../user-modify/user-modify.component";
 
 @Component({
@@ -20,13 +21,11 @@ export class UserListComponent {
 
   @ViewChild('hp', undefined) hp: HttpPaginationComponent;
 
+  userSearchForm: FormGroup;
+
   url:string = environment.domain + "/fmUser/list";
 
   param: any = {
-  }
-
-  searchPara: any = {
-
   }
 
   dataList:Array<any>=[
@@ -41,9 +40,15 @@ export class UserListComponent {
      private ngbModalService: NgbModal,
      private httpService: HttpService,
      public userService: UserService,
-     private toastService: ToastService
+     private toastService: ToastService,
+     private formBuilder: FormBuilder
    ) {
     this.appService.titleEventEmitter.emit("用户列表");
+
+     this.userSearchForm=this.formBuilder.group({
+       userName: '',
+       userAccount: ''
+     });
   }
 
   onDataChanged($event){
@@ -51,9 +56,13 @@ export class UserListComponent {
   }
 
   search() {
-    console.log(this.searchPara.userName);
-
-
+    if (this.userSearchForm.controls["userName"].value != null) {
+      this.param.userName = this.userSearchForm.controls["userName"].value;
+    }
+    if (this.userSearchForm.controls["userAccount"].value != null) {
+      this.param.userAccount = this.userSearchForm.controls["userAccount"].value;
+    }
+    this.hp.search();
   }
 
   viewUserInfo (id) {

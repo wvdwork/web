@@ -10,14 +10,16 @@ import {HttpService} from "../../../shared/http/http.service";
 import {ApplicationService} from "../../../service/application/application.service";
 import {ToastService} from "../../../shared/toast/toast.service";
 import {ToastConfig, ToastType} from "../../../shared/toast/toast-model";
-// import {UserAddComponent} from "../user-modify/user-modify.component";
+import { Select2OptionData } from 'ng2-select2';
+import {FormBuilder, FormGroup} from "@angular/forms";
 
 @Component({
   selector: 'c-user-list',
   templateUrl: './application-list.component.html'
 })
 export class ApplicationListComponent {
-
+  applicationSearchForm: FormGroup;
+  companyId: any;
   @ViewChild('hp', undefined) hp: HttpPaginationComponent;
 
   url:string = environment.domain + "/fmApplication/list";
@@ -39,14 +41,62 @@ export class ApplicationListComponent {
      private ngbModalService: NgbModal,
      private httpService: HttpService,
      public applicationService: ApplicationService,
-     private toastService: ToastService
+     private toastService: ToastService,
+     private formBuilder: FormBuilder
    ) {
-    this.appService.titleEventEmitter.emit("用户列表");
+     this.appService.titleEventEmitter.emit("用户列表");
+
+     this.applicationSearchForm=this.formBuilder.group({
+       applicationName: ''
+     });
+  }
+
+  search() {
+    if (this.applicationSearchForm.controls["applicationName"].value != null) {
+      this.param.applicationName = this.applicationSearchForm.controls["applicationName"].value;
+    }
+    if (this.applicationSearchForm.controls["companyId"].value != null) {
+      this.param.companyId = this.applicationSearchForm.controls["companyId"].value;
+    }
+
+
+
+    console.log(this.companyId)
   }
 
   onDataChanged($event){
     this.dataList = $event;
   }
+
+  options2: Select2Options = {
+    placeholder: '请选择...',
+    width: '100%',
+    theme: "bootstrap",
+    language: {
+      "noResults": function () {
+        return "搜索不到数据..";
+      }
+    }
+  };
+
+  public exampleData: Array<Select2OptionData> = [
+    {
+      id: 'basic1',
+      text: '选项1'
+    },
+    {
+      id: 'basic2',
+      text: '选项2'
+    },
+    {
+      id: 'basic3',
+      text: '选项3'
+    },
+    {
+      id: 'basic4',
+      text: '选项4'
+    }
+  ];
 
   // viewUserInfo (id) {
   //   const modalRef = this.ngbModalService.open(UserInfoComponent, { size: 'lg'});

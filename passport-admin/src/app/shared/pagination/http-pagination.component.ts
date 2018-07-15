@@ -129,7 +129,7 @@ export class HttpPaginationComponent implements OnInit {
      */
     private serverDataProcess(data: any) {
         data = data.data;
-        if (data && data.total && data.current) {
+        if ((data && data.total && data.current) >= 0) {
             this.total = data.total;
             this.onDataChanged.emit(data.records);
         } else {

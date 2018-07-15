@@ -4,32 +4,38 @@
             <p class="c-line-title">条件查询</p>
         </div>
     </div>
-    <div class="row">
-        <div class="col-md-4">
-            <div class="form-group row">
-                <label class="col-md-3 col-form-label text-right">项目名称：</label>
-                <div class="col-md-9">
-                    <input type="text" class="form-control" placeholder="">
-                </div>
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="form-group row">
-                <!--<label class="col-md-3 col-form-label text-right">姓名：</label>-->
-                <div class="col-md-9">
-                    <!--<input type="text" class="form-control" placeholder="请输入姓名...">-->
-                </div>
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="form-group">
-                <button class="btn btn-primary"><i class="fa fa-search fa-fw"></i> 查询</button>
-            </div>
-        </div>
+    <form [formGroup]="applicationSearchForm">
+      <div class="row">
+          <div class="col-md-4">
+              <div class="form-group row">
+                  <label class="col-md-3 col-form-label text-right">项目名称：</label>
+                  <div class="col-md-9">
+                      <input type="text" class="form-control" formControlName="applicationName">
+                  </div>
+              </div>
+          </div>
+
+          <div class="col-md-4">
+              <div class="form-group">
+                  <button class="btn btn-primary" (click)="search()"><i class="fa fa-search fa-fw"></i> 查询</button>
+              </div>
+          </div>
+      </div>
+    </form>
+
+  <div class="col-md-4">
+    <div class="form-group row">
+      <label class="col-md-3 col-form-label text-right">所属公司：</label>
+      <div class="col-md-9">
+        <select2 class="form-control" [data]="exampleData" [options]="options2" [value]="''"></select2>
+      </div>
     </div>
+  </div>
     <div class="row" style="margin-bottom: 3px">
       <div class="col-md-12">
         <button class="btn btn-success btn-sm" (click)="addUser()"><i class="fa fa-plus fa-fw"></i> 新增</button>
+        <button class="btn btn-success btn-sm" (click)="addUser()"><i class="fa fa-user-plus fa-fw"></i> 添加成员</button>
+        <button class="btn btn-success btn-sm" (click)="addUser()"><i class="fa fa-user-times fa-fw"></i> 删除成员</button>
       </div>
     </div>
     <div class="row">
@@ -38,6 +44,7 @@
             <table class="table table-bordered">
                 <thead>
                     <tr>
+                        <th class="text-center c-w-0" style="width: 2.083%"></th>
                         <th class="text-center c-w-1">序号</th>
                         <th class="text-center c-w-2">项目名称</th>
                         <th class="text-center c-w-2">项目描述</th>
@@ -48,6 +55,7 @@
                 </thead>
                 <tbody>
                     <tr *ngFor="let data of dataList;let i = index">
+                        <td><input type="radio" name="a"/></td>
                         <td class="text-center">{{i+1}}</td>
                         <td class="text-center">{{data.applicationName}}</td>
                         <td class="text-center">{{data.applicationDesc}}</td>
@@ -57,7 +65,6 @@
                             <div >
                               <button class="btn btn-info btn-sm" (click)="viewUserInfo(data.id)"><i class="fa fa-search fa-fw"></i> 查看</button>
                               <button class="btn btn-success btn-sm" (click)="updateUser(data.id)"><i class="fa fa-pencil fa-fw"></i> 编辑</button>
-                              <button class="btn btn-danger btn-sm" (click)="delUser(data.id)"><i class="fa fa-trash-o fa-fw"></i> 删除</button>
                             </div>
                         </td>
                     </tr>

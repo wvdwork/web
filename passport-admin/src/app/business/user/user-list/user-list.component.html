@@ -4,29 +4,31 @@
             <p class="c-line-title">条件查询</p>
         </div>
     </div>
-    <div class="row">
-        <div class="col-md-4">
-            <div class="form-group row">
-                <label class="col-md-3 col-form-label text-right">帐号：</label>
-                <div class="col-md-9">
-                    <input type="text" class="form-control" ng-model="searchPara.userAccount">
-                </div>
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="form-group row">
-                <label class="col-md-3 col-form-label text-right">姓名：</label>
-                <div class="col-md-9">
-                    <input type="text" class="form-control" ng-model="searchPara.userName">
-                </div>
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="form-group">
-                <button class="btn btn-primary" (click)="search()"><i class="fa fa-search fa-fw"></i> 查询</button>
-            </div>
-        </div>
-    </div>
+    <form [formGroup]="userSearchForm">
+      <div class="row">
+          <div class="col-md-4">
+              <div class="form-group row">
+                  <label class="col-md-3 col-form-label text-right">帐号：</label>
+                  <div class="col-md-9">
+                      <input type="text" class="form-control" formControlName="userAccount">
+                  </div>
+              </div>
+          </div>
+          <div class="col-md-4">
+              <div class="form-group row">
+                  <label class="col-md-3 col-form-label text-right">姓名：</label>
+                  <div class="col-md-9">
+                      <input type="text" class="form-control" formControlName="userName">
+                  </div>
+              </div>
+          </div>
+          <div class="col-md-4">
+              <div class="form-group">
+                  <button class="btn btn-primary" (click)="search()"><i class="fa fa-search fa-fw"></i> 查询</button>
+              </div>
+          </div>
+      </div>
+    </form>
     <div class="row" style="margin-bottom: 3px">
       <div class="col-md-12">
         <button class="btn btn-success btn-sm" (click)="addUser()"><i class="fa fa-plus fa-fw"></i> 新增</button>
@@ -51,7 +53,7 @@
                     <tr *ngFor="let data of dataList;let i = index">
                         <td class="text-center">{{i+1}}</td>
                         <td class="text-center">{{data.userAccount}}</td>
-                        <td class="text-center">{{data.userNickName}}</td>
+                        <td class="text-center">{{data.userName}}</td>
                         <td class="text-center">{{data.userMail}}</td>
                         <td class="text-center">{{data.createTime}}</td>
                         <td class="text-center">{{data.updateTime}}

@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core';
 import { CommonModule }       from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import  { PaginationModule}       from '../../shared/pagination/pagination.module';
+import { SelectModule } from 'angular2-select';
+import { Select2Module } from 'ng2-select2';
 
 import { ApplicationRoutingModule } from './application-routing.module';
 import { ApplicationComponent } from './application.component';
@@ -21,7 +23,9 @@ import {NgbModule} from "@ng-bootstrap/ng-bootstrap";
     ReactiveFormsModule,
     ApplicationRoutingModule,
     PaginationModule,
-    NgbModule
+    NgbModule,
+    SelectModule,
+    Select2Module
   ],
   declarations: [
     ApplicationComponent,
